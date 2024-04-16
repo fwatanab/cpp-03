@@ -2,6 +2,8 @@
 
 ClapTrap::ClapTrap(std::string name) : name(name), hitPoint(10), energyPoint(10), attackDamage(0) {}
 
+ClapTrap::~ClapTrap() {}
+
 void	ClapTrap::attack(const std::string& target) {
 	if (energyPoint > 0) {
 		energyPoint--;

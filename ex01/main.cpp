@@ -1,20 +1,16 @@
 #include "ScavTrap.hpp"
 
 int	main() {
-	ScavTrap scavtrap1("CT1");
-	ScavTrap scavtrap2("CT2");
+	ClapTrap ct("CT");
+	ScavTrap st1("ST1");
+	ScavTrap st2("ST2");
 
-	scavtrap1.attack("CT2");
-	scavtrap2.takeDamage(3);
-	scavtrap2.status();
+	ct.attack("CT");
+	st1.attack("ST1");
+	st2.attack("ST2");
 
-	scavtrap2.beRepaired(5);
-	scavtrap2.status();
-
-	scavtrap1.attack("CT2");
-	scavtrap2.takeDamage(2);
-	scavtrap1.status();
-	scavtrap2.status();
+	st1.guardGate();
+	st2.guardGate();
 
 	return 0;
 }

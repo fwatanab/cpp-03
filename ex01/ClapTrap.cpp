@@ -1,8 +1,12 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) : name(name), hitPoint(10), energyPoint(10), attackDamage(0) {}
+ClapTrap::ClapTrap(std::string name) : name(name), hitPoint(10), energyPoint(10), attackDamage(0) {
+	std::cout << "constructor" << std::endl;
+}
 
-ClapTrap::~ClapTrap() {}
+ClapTrap::~ClapTrap() {
+	std::cout << "destructor" << std::endl;
+}
 
 void	ClapTrap::attack(const std::string& target) {
 	if (energyPoint > 0) {

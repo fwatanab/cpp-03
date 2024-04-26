@@ -9,5 +9,7 @@ int	main() {
 	ft1.attack("FT1");
 	ft2.attack("FT2");
 
+	ft1.highFivesGuys();
+
 	return 0;
 }

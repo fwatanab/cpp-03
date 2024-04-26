@@ -1,8 +1,12 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) : name(name), hitPoint(10), energyPoint(10), attackDamage(0) {}
+ClapTrap::ClapTrap(const std::string name) : name(name), hitPoint(10), energyPoint(10), attackDamage(0) {
+	std::cout << "ClapTrap " << name << " constructor" << std::endl;
+}
 
-ClapTrap::~ClapTrap() {}
+ClapTrap::~ClapTrap() {
+	std::cout << "ClapTrap " << name << " destructor" << std::endl;
+}
 
 void	ClapTrap::attack(const std::string& target) {
 	if (energyPoint > 0) {
@@ -25,12 +29,5 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << "ClapTrap " << name << " is repaired for " << amount << " points!" << std::endl;
 	}
 	else
-		std::cerr << "Error: NOT enough energy points" << std::endl;
-}
-
-void	ClapTrap::status() {
-	std::cout << "name: " << name << std::endl;
-	std::cout << "Hit Point: " << hitPoint << std::endl;
-	std::cout << "Energy Point: " << energyPoint << std::endl;
-	std::cout << "Attack Damage: " << attackDamage << std::endl << std::endl;
+		std::cerr << "ClapTrap " << name << " Error: NOT enough energy points" << std::endl;
 }

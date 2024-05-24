@@ -1,10 +1,28 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap() : ClapTrap("none") {
+	hitPoint = 100;
+	energyPoint = 50;
+	attackDamage = 20;
+	std::cout << "ScavTrap " << name <<  " Default inheritance constructor" << std::endl;
+}
+
 ScavTrap::ScavTrap(const std::string name) : ClapTrap(name) {
 	hitPoint = 100;
 	energyPoint = 50;
 	attackDamage = 20;
 	std::cout << "ScavTrap " << name <<  " Inheritance constructor" << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) {
+	std::cout << "ScavTrap " << name <<  " copy inheritance constructor" << std::endl;
+}
+
+ScavTrap&	ScavTrap::operator=(const ScavTrap& other) {
+	if (this != &other)
+		ClapTrap::operator=(other);
+	std::cout << "ScavTrap " << name << " operator =" << std::endl;
+	return *this;
 }
 
 ScavTrap::~ScavTrap() {
